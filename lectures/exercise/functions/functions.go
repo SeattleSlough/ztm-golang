@@ -21,5 +21,29 @@ import "fmt"
 
 func main() {
 
+	greetPerson("Michael")
+	fmt.Println(hiThere())
+	a, b := twoTwos()
+	answer := addThree(five(), a, b)
+	fmt.Println(answer)
 }
 
+func greetPerson(name string) {
+	fmt.Println("Hello,", name)
+}
+
+func hiThere() string {
+	return "Hi there!"
+}
+
+func five() int {
+	return 5
+}
+
+func addThree(a, b, c int) int {
+	return a + b + c
+}
+
+func twoTwos() (int, int) {
+	return 2, 2
+}
