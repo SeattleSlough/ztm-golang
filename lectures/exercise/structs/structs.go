@@ -3,7 +3,6 @@
 //  of a rectangle.
 //
 //--Requirements:
-//* Create a rectangle structure containing a length and width field
 //* Using functions, calculate the area and perimeter of a rectangle,
 //  - Print the results to the terminal
 //  - The functions must use the rectangle structure as the function parameter
@@ -19,7 +18,33 @@ package main
 
 import "fmt"
 
+//* Create a rectangle structure containing a length and width field
+type Rectangle struct {
+	length int
+	width int
+}
+
+func area(rect Rectangle) int {
+	return rect.length * rect.width
+}
+
+func perimeter(rect Rectangle) int {
+	return (2 * rect.length) + (2 * rect.width)
+}
+
+func printInfo(rect Rectangle) {
+	fmt.Println("The area is", area(rect))
+	fmt.Println("The perimeter is", perimeter(rect))
+}
+
 func main() {
+	var rect = Rectangle{length:3, width: 7}
+	printInfo(rect)
+
+	rect.length *= 2
+	rect.width *= 2
+
+	printInfo(rect)
 
 }
 
